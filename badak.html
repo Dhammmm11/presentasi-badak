@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi Hewan Badak</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #e0e7ff, #f3e8ff); /* from-indigo-50 to-purple-50 */
+            min-height: 100vh;
+            color: #374151; /* gray-800 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px; /* max-w-4xl */
+            margin: 0 auto;
+            padding: 16px; /* p-4 */
+        }
+
+        @media (min-width: 768px) { /* md breakpoint */
+            .container {
+                padding: 32px; /* md:p-8 */
+            }
+        }
+
+        section, header, footer {
+            background-color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            border-radius: 24px; /* rounded-3xl */
+            padding: 32px; /* p-8 */
+            margin-bottom: 40px; /* mb-10 */
+            transition: all 0.3s ease-in-out;
+        }
+
+        section:hover, header:hover {
+            transform: scale(1.02); /* hover:scale-105 */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08); /* hover:shadow-2xl */
+        }
+
+        /* Header Specific Styles */
+        header {
+            text-align: center;
+            border-bottom: 8px solid #8B5CF6; /* border-b-8 border-purple-600 */
+        }
+
+        header h1 {
+            font-size: 48px; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #6B46C1; /* purple-800 */
+            margin-bottom: 16px; /* mb-4 */
+            letter-spacing: -0.05em; /* tracking-tight */
+        }
+
+        @media (min-width: 768px) {
+            header h1 {
+                font-size: 60px; /* md:text-6xl */
+            }
+        }
+
+        header p {
+            font-size: 20px; /* text-xl */
+            color: #4B5563; /* gray-700 */
+            font-weight: 500; /* font-medium */
+        }
+
+        @media (min-width: 768px) {
+            header p {
+                font-size: 24px; /* md:text-2xl */
+            }
+        }
+
+        /* Section Heading Styles */
+        h2 {
+            font-size: 36px; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #7C3AED; /* purple-700 */
+            margin-bottom: 24px; /* mb-6 */
+            border-bottom: 4px solid #D8B4FE; /* border-b-4 border-purple-300 */
+            padding-bottom: 16px; /* pb-4 */
+        }
+
+        /* Flex Container for Image and Text */
+        .flex-container {
+            display: flex;
+            flex-direction: column; /* flex-col */
+            align-items: center; /* items-center */
+            gap: 32px; /* space-x-8 (for horizontal) */
+        }
+
+        @media (min-width: 768px) {
+            .flex-container {
+                flex-direction: row; /* md:flex-row */
+            }
+        }
+
+        .flex-item-half {
+            width: 100%;
+            margin-bottom: 24px; /* mb-6 */
+        }
+
+        @media (min-width: 768px) {
+            .flex-item-half {
+                width: 50%; /* md:w-1/2 */
+                margin-bottom: 0; /* md:mb-0 */
+            }
+        }
+
+        .image-container {
+            width: 100%;
+        }
+
+        .image-container img {
+            border-radius: 16px; /* rounded-2xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 4px solid #E9D5FF; /* border-4 border-purple-200 */
+        }
+
+        .image-caption {
+            font-size: 14px; /* text-sm */
+            color: #6B7280; /* gray-500 */
+            margin-top: 12px; /* mt-3 */
+            text-align: center;
+            font-style: italic;
+        }
+
+        .text-content p {
+            font-size: 18px; /* text-lg */
+            line-height: 1.625; /* leading-relaxed */
+            color: #4B5563; /* gray-700 */
+            margin-top: 16px; /* mt-4 */
+        }
+
+        .text-content p:first-child {
+            margin-top: 0;
+        }
+
+        .text-content ul {
+            font-size: 18px; /* text-lg */
+            line-height: 1.625; /* leading-relaxed */
+            color: #4B5563; /* gray-700 */
+            list-style-type: disc;
+            list-style-position: inside;
+            margin-top: 8px; /* mt-2 */
+            margin-left: 0; /* list-inside takes care of this */
+            padding-left: 0;
+        }
+
+        .text-content ul li {
+            margin-bottom: 12px; /* space-y-3 */
+        }
+
+        .text-content ul ul li {
+            margin-top: 4px; /* space-y-1 */
+            margin-bottom: 4px;
+        }
+
+        .font-semibold {
+            font-weight: 600; /* font-semibold */
+        }
+
+        .text-purple-700 {
+            color: #7C3AED;
+        }
+
+        /* Grid for Species Section */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px; /* gap-8 */
+        }
+
+        @media (min-width: 768px) { /* md breakpoint */
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+            }
+        }
+
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+            }
+        }
+
+        .species-card {
+            background-color: #EEF2FF; /* indigo-50 */
+            padding: 24px; /* p-6 */
+            border-radius: 16px; /* rounded-2xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            border: 2px solid #C7D2FE; /* border border-indigo-200 */
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .species-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
+        }
+
+        .species-card img {
+            border-radius: 8px; /* rounded-lg */
+            margin-bottom: 16px; /* mb-4 */
+            width: 100%;
+            height: 192px; /* h-48 */
+            object-fit: cover;
+            border: 2px solid #A5B4FC; /* border-2 border-indigo-300 */
+        }
+
+        .species-card h3 {
+            font-size: 24px; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            color: #374151; /* gray-800 */
+            margin-bottom: 8px; /* mb-2 */
+        }
+
+        .species-card h3 span {
+            font-size: 16px; /* text-base */
+            color: #4B5563; /* gray-600 */
+            display: block;
+        }
+
+        .species-card p {
+            font-size: 14px; /* text-sm */
+            color: #4B5563; /* gray-700 */
+        }
+
+        .text-red-600 { color: #DC2626; } /* Kritis */
+        .text-yellow-600 { color: #D97706; } /* Hampir Terancam */
+        .text-orange-600 { color: #EA580C; } /* Rentan */
+        .text-red-700 { color: #B91C1C; } /* Kritis (darker) */
+        .font-bold { font-weight: 700; }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Conservation section image */
+        .conservation-image-wrapper {
+            width: 100%;
+            max-width: 50%; /* md:w-1/2 */
+            margin: 0 auto;
+        }
+        @media (max-width: 767px) {
+             .conservation-image-wrapper {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+
+        /* Footer Specific Styles */
+        footer {
+            margin-top: 40px; /* mt-10 */
+            padding: 24px; /* p-6 */
+            font-size: 14px; /* text-sm */
+            color: #4B5563; /* gray-600 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>
+                Presentasi Hewan Badak
+            </h1>
+            <p>
+                Mengenal Lebih Dekat Satwa Perkasa dari Hutan dan Savannah
+            </p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section>
+            <h2>
+                Apa itu Badak?
+            </h2>
+            <div class="flex-container">
+                <div class="flex-item-half image-container">
+                    <!-- Image of a general rhino -->
+                    <img src="https://files.catbox.moe/j2s573.jpg" alt="Gambar Badak">
+                    <p class="image-caption">
+                        [Rhino]
+                    </p>
+                </div>
+                <div class="flex-item-half text-content">
+                    <p>
+                        Badak adalah mamalia darat berukuran besar yang termasuk dalam famili Rhinocerotidae. Mereka dikenal dengan ciri khasnya, yaitu satu atau dua cula di hidung, kulit tebal, dan tubuh yang besar. Badak merupakan salah satu hewan terbesar di darat setelah gajah.
+                    </p>
+                    <p>
+                        Ada lima spesies badak yang masih hidup, masing-masing dengan karakteristik dan habitat uniknya. Sayangnya, semua spesies badak saat ini menghadapi ancaman kepunahan serius, terutama akibat perburuan liar dan hilangnya habitat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Rhinos Section -->
+        <section>
+            <h2>
+                Spesies Badak
+            </h2>
+            <div class="grid-container">
+                <!-- Badak Hitam -->
+                <div class="species-card">
+                    <img src="https://files.catbox.moe/qrkqpe.jpg" alt="Badak Hitam">
+                    <h3>Badak Hitam <span class="text-base text-gray-600 block">(Diceros bicornis)</span></h3>
+                    <p>
+                        Asal Afrika, memiliki dua cula. Status konservasi: <span class="font-bold text-red-600">Kritis</span>.
+                    </p>
+                </div>
+                <!-- Badak Putih -->
+                <div class="species-card">
+                    <img src="https://files.catbox.moe/914a3k.jpg" alt="Badak Putih">
+                    <h3>Badak Putih <span class="text-base text-gray-600 block">(Ceratotherium simum)</span></h3>
+                    <p>
+                        Asal Afrika, memiliki dua cula dan merupakan spesies badak terbesar. Status konservasi: <span class="font-bold text-yellow-600">Hampir Terancam</span>.
+                    </p>
+                </div>
+                <!-- Badak India -->
+                <div class="species-card">
+                    <img src="https://files.catbox.moe/lzn9en.jpg" alt="Badak India">
+                    <h3>Badak India <span class="text-base text-gray-600 block">(Rhinoceros unicornis)</span></h3>
+                    <p>
+                        Asal Asia (India dan Nepal), memiliki satu cula. Status konservasi: <span class="font-bold text-orange-600">Rentan</span>.
+                    </p>
+                </div>
+                <!-- Badak Jawa -->
+                <div class="species-card">
+                    <img src="https://files.catbox.moe/k40hpz.jpg" alt="Badak Jawa">
+                    <h3>Badak Jawa <span class="text-base text-gray-600 block">(Rhinoceros sondaicus)</span></h3>
+                    <p>
+                        Asal Asia (terbatas di Indonesia), memiliki satu cula. Status konservasi: <span class="font-bold text-red-700">Kritis</span> (salah satu mamalia terlangka di dunia).
+                    </p>
+                </div>
+                <!-- Badak Sumatera -->
+                <div class="species-card">
+                    <img src="https://files.catbox.moe/16krh5.jpg" alt="Badak Sumatera">
+                    <h3>Badak Sumatera <span class="text-base text-gray-600 block">(Dicerorhinus sumatrensis)</span></h3>
+                    <p>
+                        Asal Asia (terbatas di Indonesia dan Malaysia), memiliki dua cula. Status konservasi: <span class="font-bold text-red-700">Kritis</span>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characteristics Section -->
+        <section>
+            <h2>
+                Ciri-ciri Fisik & Perilaku
+            </h2>
+            <div class="flex-container">
+                <div class="flex-item-half text-content" style="order: 2;">
+                    <ul class="list-disc list-inside space-y-3">
+                        <li>
+                            <span class="font-semibold text-purple-700">Cula:</span> Terbuat dari keratin (bahan yang sama dengan rambut dan kuku manusia), bukan tulang. Jumlahnya bervariasi antara satu atau dua, tergantung spesiesnya.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-purple-700">Kulit:</span> Sangat tebal dan berlapis-lapis, memberikan perlindungan dari predator dan lingkungan.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-purple-700">Ukuran:</span> Badak adalah hewan yang sangat besar. Badak Putih bisa mencapai berat 3.600 kg dan tinggi bahu 1,8 meter.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-purple-700">Penglihatan:</span> Badak memiliki penglihatan yang buruk, namun indra penciuman dan pendengaran mereka sangat tajam.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-purple-700">Perilaku:</span> Umumnya soliter, meskipun badak putih kadang terlihat berkelompok. Mereka suka berkubang di lumpur untuk mendinginkan tubuh dan melindungi kulit dari serangga.
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-item-half image-container" style="order: 1;">
+                    <!-- Image of rhino horn -->
+                    <img src="https://files.catbox.moe/4dh15c.jpg" alt="Cula Badak">
+                    <p class="image-caption">
+                        [Cula Badak]
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habitat & Diet Section -->
+        <section>
+            <h2>
+                Habitat & Makanan
+            </h2>
+            <div class="flex-container">
+                <div class="flex-item-half image-container">
+                    <!-- Image of rhino habitat -->
+                    <img src="https://files.catbox.moe/wn9k8r.jpg" alt="Habitat Badak">
+                    <p class="image-caption">
+                        [Gambar Habitat Badak]
+                    </p>
+                </div>
+                <div class="flex-item-half text-content">
+                    <p>
+                        <span class="font-semibold text-purple-700">Habitat:</span> Badak Afrika (Hitam dan Putih) umumnya hidup di padang rumput, savana, dan semak belukar. Badak Asia (India, Jawa, dan Sumatera) menghuni hutan tropis, rawa-rawa, dan daerah berawa.
+                    </p>
+                    <p>
+                        <span class="font-semibold text-purple-700">Makanan:</span> Badak adalah herbivora.
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Badak Hitam dan Badak Sumatera adalah pemakan dedaunan (browser), mereka makan daun, tunas, dan ranting.</li>
+                            <li>Badak Putih, Badak India, dan Badak Jawa adalah pemakan rumput (grazer), mereka makan rumput dan tanaman herba.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conservation Section -->
+        <section>
+            <h2>
+                Konservasi Badak
+            </h2>
+            <p class="text-content" style="margin-bottom: 20px;">
+                Jumlah populasi badak di alam liar telah menurun drastis dalam beberapa dekade terakhir. Ancaman utama adalah perburuan liar untuk culanya, yang diyakini memiliki khasiat medis di beberapa budaya (meskipun tidak ada bukti ilmiah yang mendukungnya). Selain itu, hilangnya habitat akibat deforestasi dan pembangunan juga menjadi masalah serius.
+            </p>
+            <p class="text-content" style="margin-bottom: 20px;">
+                Upaya konservasi yang sedang berjalan meliputi:
+            </p>
+            <ul class="list-disc list-inside text-content" style="margin-bottom: 24px;">
+                <li>Patroli anti-perburuan liar yang ketat.</li>
+                <li>Perlindungan habitat alami.</li>
+                <li>Program pemuliaan dan reintroduksi.</li>
+                <li>Edukasi masyarakat tentang pentingnya konservasi badak.</li>
+                <li>Penegakan hukum yang lebih kuat terhadap perdagangan satwa liar ilegal.</li>
+            </ul>
+            <div class="conservation-image-wrapper">
+                <!-- Image for conservation -->
+                <img src="https://files.catbox.moe/h1y8z0.jpg" alt="Lindungi Badak"width="290px">
+                <p class="image-caption">
+                        [Protect]
+                </p>
+            </div>
+            <p class="text-center font-bold text-purple-700" style="font-size: 20px; margin-top: 32px;">
+                Mari bersama-sama lindungi badak untuk generasi mendatang!
+            </p>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2025 Presentasi Hewan Badak. Dibuat dengan semangat konservasi,oleh Marr</p>
+        </footer>
+    </div>
+</body>
+</html>
+
